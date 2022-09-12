@@ -21,6 +21,15 @@ class ApplicationController < Sinatra::Base
     staff.to_json
   end
 
+  patch '/staffs' do
+    staff = Staff.update(
+    name:params[:name],
+    age:params[:age],
+    gender:params[:gender],
+    occupation:params[:occupation])
+    staff.to_json
+  end
+
   post '/ships' do
     ship = Ship.create(
     vessel:params[:vessel],
