@@ -10,6 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_09_12_013650) do
+
+  create_table "docks", force: :cascade do |t|
+    t.string "status"
+    t.string "cargo"
+    t.integer "ship_id"
+  end
+
+  create_table "ships", force: :cascade do |t|
+    t.string "vessel"
+    t.integer "built"
+    t.integer "gt"
+    t.integer "size"
+  end
+
+  create_table "staffs", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "gender"
+    t.string "occupation"
+  end
 
 end
