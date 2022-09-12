@@ -39,6 +39,15 @@ class ApplicationController < Sinatra::Base
     ship.to_json
   end
 
+  patch '/ships' do
+    ship = Ship.update(
+    vessel:params[:vessel],
+    built:params[:built],
+    gt:params[:gt],
+    size:params[:size])
+    ship.to_json
+  end
+
   delete '/ships/:id' do
     ship = Ship.find(params[:id])
     ship.destroy
